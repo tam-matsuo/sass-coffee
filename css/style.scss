@@ -1,0 +1,65 @@
+$prefixList: -webkit-,-moz-,-o-,null;
+
+@mixin bg_size($w, $h: auto){
+	@each $prefix in $prefixList{
+		#{$prefix}background-size: $w, $h;
+	}
+}
+
+@mixin vendorPre($property, $value) {
+	@each $prefix in '-webkit-', '-moz-', '-ms-', '-o-', '' {
+		#{$prefix}#{$property}: $value;
+	}
+}
+
+$bp-tablet:1024px;
+$bp-sp:640px;
+$bp-iphone:320px;
+
+@mixin media($media-width){
+	@if $media-width == sp {
+		@media only screen and (max-width:$bp-sp){
+			@content
+		}
+	}
+}
+
+@mixin media($media-width){
+	@if $media-width == sp {
+		@media only screen and (max-width:$bp-sp){
+			@content
+		}
+	}
+
+	@else if $media-width == iphone {
+		@media only screen and (max-width:$bp-iphone){
+			@content
+		}
+	}
+
+	@else if $media-width == tablet {
+		@media only screen and (max-width:$bp-tablet){
+			@content
+		}
+	}
+}
+
+#main{
+	@include media(tablet){
+		float:none;
+	}
+	@include media(sp){
+		float:none;
+	}
+	@include media(iphone){
+		float:none;
+	}
+}
+
+.box {
+	@include vendorPre(border-radius, 4px);
+}
+
+body{
+	@include bg_size(690px / 2 ,auto)
+}

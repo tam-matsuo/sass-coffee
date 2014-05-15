@@ -1,0 +1,30 @@
+@media only screen and (max-width: 1024px) {
+  #main {
+    float: none;
+  }
+}
+@media only screen and (max-width: 640px) {
+  #main {
+    float: none;
+  }
+}
+@media only screen and (max-width: 320px) {
+  #main {
+    float: none;
+  }
+}
+
+.box {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+
+body {
+  -webkit-background-size: 345px, auto;
+  -moz-background-size: 345px, auto;
+  -o-background-size: 345px, auto;
+  background-size: 345px, auto;
+}
